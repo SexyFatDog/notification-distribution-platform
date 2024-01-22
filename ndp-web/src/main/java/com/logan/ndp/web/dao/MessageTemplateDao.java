@@ -14,6 +14,12 @@ import java.util.List;
  * DTO：在服务端数据传输的对象，编号、博客标题、博客内容、博客标签、博客分类、创建时间、上一篇博客编号、下一篇博客编号。
  * DAO：数据库增删改查的方法，例如新增博客、删除博客、查询所有博客、更新博客。
  * BO：基本业务操作，如管理分类、管理标签、修改博客状态等，是我们常说的service层操作
+ *
+ * Service 业务逻辑
+ *    ↓
+ * Repository 单纯的数据库操作（DAO）
+ *    ↓
+ * Domain 对数据库表的映射
  */
 public interface MessageTemplateDao extends JpaRepository<MessageTemplateDo, Long>, JpaSpecificationExecutor<MessageTemplateDo> {
     /**
