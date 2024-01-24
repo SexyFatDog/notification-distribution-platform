@@ -1,36 +1,36 @@
 package com.logan.ndp.web.config;
 
-import io.swagger.annotations.Api;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import org.springdoc.core.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-@EnableSwagger2
 public class SwaggerConfig {
+
     @Bean
-    public Docket createRestApi(){
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-                .paths(PathSelectors.any())
-                .build();
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI().info(new Info()
+                .title("NDP API")
+                .description("NDP controller提供的接口文档")
+                .version("v1.0.0")
+        );
     }
 
-    //基本信息的配置，信息会在api文档上显示
-    private ApiInfo apiInfo(){
-        return new ApiInfoBuilder()
-                .title("NDP接口文档")
-                .description("NDP相关接口的文档")
-                .termsOfServiceUrl("http://localhost:8963/hello")
-                .version("1.0")
+    @Bean
+    public GroupedOpenApi adminApi() {
+        return GroupedOpenApi.builder()
+                .group("普通接口文档")
+                .pathsToMatch("/web/test/**").build();
+    }
+
+    @Bean
+    public GroupedOpenApi homeApi() {
+        return GroupedOpenApi.builder()
+                .group("首页相关接口")
+                .pathsToMatch("/query/excel/**")
                 .build();
     }
 }

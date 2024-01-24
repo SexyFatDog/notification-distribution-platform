@@ -1,7 +1,8 @@
 package com.logan.ndp.web.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
  *健康检测，测试服务正常运行
  */
 @RestController
-@Api("健康检测")
+@Tag(name = "health observation")
 public class HealthController {
 
     @GetMapping("/")
-    @ApiOperation("/健康检测")
+    @Operation(method = "get", summary = "health observation")
     public String healthObserve() {return "success";}
 }

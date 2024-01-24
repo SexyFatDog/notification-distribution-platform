@@ -1,6 +1,6 @@
 package com.logan.ndp.common.enums;
 
-interface PowerfulEnum {
+public interface PowerfulEnum {
 
     /**
      * 获取枚举的code
