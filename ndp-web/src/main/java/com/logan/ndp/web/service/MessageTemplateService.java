@@ -1,7 +1,7 @@
 package com.logan.ndp.web.service;
 
-import com.logan.ndp.web.domain.MessageTemplateDo;
-import com.logan.ndp.web.vo.BasicResultVO;
+import com.logan.ndp.repository.domain.MessageTemplateDo;
+import com.logan.ndp.common.vo.BasicResultVO;
 import com.logan.ndp.web.vo.MessageTemplateParams;
 import org.springframework.data.domain.Page;
 

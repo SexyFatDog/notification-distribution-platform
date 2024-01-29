@@ -8,10 +8,10 @@ import com.logan.ndp.common.constant.CommonConstant;
 import com.logan.ndp.common.constant.NDPConstant;
 import com.logan.ndp.common.enums.AuditStatus;
 import com.logan.ndp.common.enums.MessageStatus;
-import com.logan.ndp.web.dao.MessageTemplateDao;
-import com.logan.ndp.web.domain.MessageTemplateDo;
+import com.logan.ndp.repository.dao.MessageTemplateDao;
+import com.logan.ndp.repository.domain.MessageTemplateDo;
 import com.logan.ndp.web.service.MessageTemplateService;
-import com.logan.ndp.web.vo.BasicResultVO;
+import com.logan.ndp.common.vo.BasicResultVO;
 import com.logan.ndp.web.vo.MessageTemplateParams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -120,7 +120,7 @@ public class MessageTemplateServiceImpl implements MessageTemplateService {
         messageTemplate.setFlowId(CharSequenceUtil.EMPTY)
                 .setMsgStatus(MessageStatus.INIT.getCode()).setAuditStatus(AuditStatus.WAIT_AUDIT.getCode())
                 .setCreator(CharSequenceUtil.isBlank(messageTemplate.getCreator()) ? NDPConstant.DEFAULT_CREATOR : messageTemplate.getCreator())
-                .setUpdator(CharSequenceUtil.isBlank(messageTemplate.getUpdator()) ? NDPConstant.DEFAULT_UPDATOR : messageTemplate.getUpdator())
+                .setUpdator(CharSequenceUtil.isBlank(messageTemplate.getUpdator()) ? NDPConstant.DEFAULT_UPDATER : messageTemplate.getUpdator())
                 .setTeam(CharSequenceUtil.isBlank(messageTemplate.getTeam()) ? NDPConstant.DEFAULT_TEAM : messageTemplate.getTeam())
                 .setAuditor(CharSequenceUtil.isBlank(messageTemplate.getAuditor()) ? NDPConstant.DEFAULT_AUDITOR : messageTemplate.getAuditor())
                 .setCreated(Math.toIntExact(DateUtil.currentSeconds()))

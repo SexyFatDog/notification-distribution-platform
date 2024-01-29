@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @Description 短信消息模型
+ * @Description 短信消息体
  * @Author Logan 黄嘉林
  * @Date 2023/7/15 15:26
  **/

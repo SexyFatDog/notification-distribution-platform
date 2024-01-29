@@ -8,9 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ndp-config" />
+        <module name="ndp-repository" />
+        <module name="ndp-web" />
         <module name="ndp-eureka" />
         <module name="ndp-common" />
-        <module name="ndp-web" />
+        <module name="ndp-messageQueue" />
+        <module name="ndp-sendService" />
       </profile>
     </annotationProcessing>
   </component>

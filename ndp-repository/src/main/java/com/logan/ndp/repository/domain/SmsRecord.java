@@ -1,4 +1,4 @@
-package com.logan.ndp.web.domain;
+package com.logan.ndp.repository.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

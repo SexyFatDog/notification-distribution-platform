@@ -1,6 +1,7 @@
-package com.logan.ndp.web.dao;
+package com.logan.ndp.repository.dao;
 
-import com.logan.ndp.web.domain.MessageTemplateDo;
+
+import com.logan.ndp.repository.domain.MessageTemplateDo;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

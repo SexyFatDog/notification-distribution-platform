@@ -1,4 +1,4 @@
-package com.logan.ndp.web.vo;
+package com.logan.ndp.common.vo;
 
 import com.logan.ndp.common.enums.RespStatusEnum;
 import lombok.AllArgsConstructor;

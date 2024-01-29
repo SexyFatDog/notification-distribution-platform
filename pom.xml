@@ -13,6 +13,9 @@
         <module>ndp-web</module>
         <module>ndp-common</module>
         <module>ndp-config</module>
+        <module>ndp-sendService</module>
+        <module>ndp-repository</module>
+        <module>ndp-messageQueue</module>
     </modules>
 
     <properties>
@@ -39,7 +42,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
         <!-- Eureka Client.
         Server 在子模块ndp-eureka中单独引入-->
