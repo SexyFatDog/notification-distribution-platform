@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.github.wenhao</groupId>
             <artifactId>jpa-spec</artifactId>
-            <version>3.1.0</version>
+            <version>3.2.4</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -12,15 +12,18 @@ import com.logan.ndp.service.common.pipeline.ProcessController;
 import com.logan.ndp.service.impl.domain.SendTaskModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 
 import java.util.Collections;
 import java.util.List;
 
+@Service
 public class SendServiceImpl implements SendService {
+    // @Qualifier("apiProcessController")
     @Autowired
-    @Qualifier("apiProcessController")
     private ProcessController processController;
 
     @Override

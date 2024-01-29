@@ -1,6 +1,6 @@
 package com.logan.ndp.repository.dao;
 
-import com.logan.ndp.web.domain.ChannelAccountDo;
+import com.logan.ndp.repository.domain.ChannelAccountDo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

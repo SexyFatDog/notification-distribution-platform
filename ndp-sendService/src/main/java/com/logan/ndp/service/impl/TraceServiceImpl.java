@@ -11,10 +11,12 @@ import com.logan.ndp.service.api.TraceService;
 import com.logan.ndp.service.api.domain.TraceResponse;
 import com.logan.ndp.service.common.domain.SimpleAnchorInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class TraceServiceImpl implements TraceService {
     @Autowired
     private RedisUtils redisUtils;

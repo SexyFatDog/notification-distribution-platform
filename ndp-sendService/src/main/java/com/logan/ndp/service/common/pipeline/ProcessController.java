@@ -6,6 +6,11 @@ import com.logan.ndp.common.enums.RespStatusEnum;
 import com.logan.ndp.common.vo.BasicResultVO;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -18,6 +23,7 @@ import java.util.Objects;
  **/
 @Slf4j
 @Data
+@Component
 public class ProcessController {
 
     /**
