@@ -34,7 +34,7 @@ public class MessageTemplateServiceImpl implements MessageTemplateService {
 
     @Override
     public Page<MessageTemplateDo> queryList(MessageTemplateParams messageTemplateParam) {
-        PageRequest pageRequest = new PageRequest(messageTemplateParam.getPage() - 1, messageTemplateParam.getPerPage());
+        PageRequest pageRequest = PageRequest.of(messageTemplateParam.getPage() - 1, messageTemplateParam.getPerPage());
         String creator = CharSequenceUtil.isBlank(messageTemplateParam.getCreator()) ? NDPConstant.DEFAULT_CREATOR : messageTemplateParam.getCreator();
         return messageTemplateDao.findAll(new Specification<MessageTemplateDo>() {
             @Override
@@ -80,21 +80,21 @@ public class MessageTemplateServiceImpl implements MessageTemplateService {
 
     @Override
     public void deleteByIds(List<Long> ids) {
-        Iterable<MessageTemplateDo> messageTemplateDos = messageTemplateDao.findAll(ids);
+        Iterable<MessageTemplateDo> messageTemplateDos = messageTemplateDao.findAllById(ids);
         messageTemplateDos.forEach(messageTemplateDo -> {
             messageTemplateDo.setIsDeleted(CommonConstant.TRUE);
         });
-        messageTemplateDao.save(messageTemplateDos);
+        messageTemplateDao.saveAll(messageTemplateDos);
     }
 
     @Override
     public MessageTemplateDo queryById(Long id) {
-        return Objects.isNull(messageTemplateDao.findOne(id)) ? null : messageTemplateDao.findOne(id);
+        return messageTemplateDao.findById(id).orElse(null);
     }
 
     @Override
     public void copy(Long id) {
-        MessageTemplateDo messageTemplateDo = Objects.isNull(messageTemplateDao.findOne(id)) ? null : messageTemplateDao.findOne(id);
+        MessageTemplateDo messageTemplateDo = messageTemplateDao.findById(id).orElse(null);
         if (Objects.nonNull(messageTemplateDo)){
             MessageTemplateDo clone = messageTemplateDo.setId(null).setCronTaskId(null);
             messageTemplateDao.save(messageTemplateDo);

@@ -9,12 +9,28 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ndp-config" />
         <module name="ndp-repository" />
+        <module name="ndp-handler" />
         <module name="ndp-web" />
         <module name="ndp-eureka" />
+        <module name="ndp-cron" />
         <module name="ndp-common" />
         <module name="ndp-messageQueue" />
         <module name="ndp-sendService" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="NDP_SC" options="-parameters" />
+      <module name="ndp-common" options="-parameters" />
+      <module name="ndp-config" options="-parameters" />
+      <module name="ndp-cron" options="-parameters" />
+      <module name="ndp-eureka" options="-parameters" />
+      <module name="ndp-handler" options="-parameters" />
+      <module name="ndp-messageQueue" options="-parameters" />
+      <module name="ndp-repository" options="-parameters" />
+      <module name="ndp-sendService" options="-parameters" />
+      <module name="ndp-web" options="-parameters" />
+    </option>
   </component>
 </project>

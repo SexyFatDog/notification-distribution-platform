@@ -9,7 +9,7 @@ import com.logan.ndp.common.enums.RespStatusEnum;
 import com.logan.ndp.repository.utils.RedisUtils;
 import com.logan.ndp.service.api.TraceService;
 import com.logan.ndp.service.api.domain.TraceResponse;
-import com.logan.ndp.service.common.domain.SimpleAnchorInfo;
+import com.logan.ndp.common.task.domain.SimpleAnchorInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

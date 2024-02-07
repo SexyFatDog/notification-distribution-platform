@@ -2,7 +2,7 @@ package com.logan.ndp.service.api.domain;
 
 
 
-import com.logan.ndp.service.common.domain.MessageParam;
+import com.logan.ndp.common.task.domain.MessageParam;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

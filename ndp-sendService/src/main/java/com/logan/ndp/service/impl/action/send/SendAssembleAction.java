@@ -16,10 +16,10 @@ import com.logan.ndp.common.utils.TaskInfoUtils;
 import com.logan.ndp.common.vo.BasicResultVO;
 import com.logan.ndp.repository.dao.MessageTemplateDao;
 import com.logan.ndp.repository.domain.MessageTemplateDo;
-import com.logan.ndp.service.common.domain.MessageParam;
-import com.logan.ndp.service.common.domain.TaskInfo;
-import com.logan.ndp.service.common.pipeline.BusinessProcess;
-import com.logan.ndp.service.common.pipeline.ProcessContext;
+import com.logan.ndp.common.task.domain.MessageParam;
+import com.logan.ndp.common.task.domain.TaskInfo;
+import com.logan.ndp.common.task.pipeline.BusinessProcess;
+import com.logan.ndp.common.task.pipeline.ProcessContext;
 import com.logan.ndp.service.impl.domain.SendTaskModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +82,7 @@ public class SendAssembleAction implements BusinessProcess<SendTaskModel> {
         Long messageTemplateId = sendTaskModel.getMessageTemplateId();
 
         try {
-            Optional<MessageTemplateDo> messageTemplate = Optional.ofNullable(messageTemplateDao.findOne(messageTemplateId));
+            Optional<MessageTemplateDo> messageTemplate = messageTemplateDao.findById(messageTemplateId);
             if (!messageTemplate.isPresent() || messageTemplate.get().getIsDeleted().equals(CommonConstant.TRUE)) {
                 context.setNeedBreak(true).setResponse(BasicResultVO.fail(RespStatusEnum.TEMPLATE_NOT_FOUND));
                 return;

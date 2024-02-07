@@ -166,7 +166,7 @@ public class RedisUtils {
     public Boolean execLimitLua(RedisScript<Long> redisScript, List<String> keys, String... args) {
 
         try {
-            Long execute = redisTemplate.execute(redisScript, keys, args);
+            Long execute = redisTemplate.execute(redisScript, keys, (Object) args);
             if (Objects.isNull(execute)) {
                 return false;
             }

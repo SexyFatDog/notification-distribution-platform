@@ -1,8 +1,8 @@
 package com.logan.ndp.service.impl.domain;
 
-import com.logan.ndp.service.common.domain.MessageParam;
-import com.logan.ndp.service.common.domain.TaskInfo;
-import com.logan.ndp.service.common.pipeline.ProcessModel;
+import com.logan.ndp.common.task.domain.MessageParam;
+import com.logan.ndp.common.task.domain.TaskInfo;
+import com.logan.ndp.common.task.pipeline.ProcessModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

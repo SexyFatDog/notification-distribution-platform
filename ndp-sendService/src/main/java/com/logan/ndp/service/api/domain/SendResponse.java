@@ -1,6 +1,6 @@
 package com.logan.ndp.service.api.domain;
 
-import com.logan.ndp.service.common.domain.SimpleTaskInfo;
+import com.logan.ndp.common.task.domain.SimpleTaskInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

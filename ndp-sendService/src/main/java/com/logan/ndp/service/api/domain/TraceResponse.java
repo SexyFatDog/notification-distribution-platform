@@ -1,6 +1,6 @@
 package com.logan.ndp.service.api.domain;
 
-import com.logan.ndp.service.common.domain.SimpleAnchorInfo;
+import com.logan.ndp.common.task.domain.SimpleAnchorInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

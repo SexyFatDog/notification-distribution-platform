@@ -7,10 +7,10 @@ import com.google.common.base.Throwables;
 import com.logan.ndp.common.enums.RespStatusEnum;
 import com.logan.ndp.common.vo.BasicResultVO;
 import com.logan.ndp.messageque.SendMqService;
-import com.logan.ndp.service.common.domain.SimpleTaskInfo;
-import com.logan.ndp.service.common.domain.TaskInfo;
-import com.logan.ndp.service.common.pipeline.BusinessProcess;
-import com.logan.ndp.service.common.pipeline.ProcessContext;
+import com.logan.ndp.common.task.domain.SimpleTaskInfo;
+import com.logan.ndp.common.task.domain.TaskInfo;
+import com.logan.ndp.common.task.pipeline.BusinessProcess;
+import com.logan.ndp.common.task.pipeline.ProcessContext;
 import com.logan.ndp.service.impl.domain.SendTaskModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +44,7 @@ public class SendMqAction implements BusinessProcess<SendTaskModel> {
     @Override
     public void process(ProcessContext<SendTaskModel> context) {
         SendTaskModel sendTaskModel = context.getProcessModel();
-        List<
-                TaskInfo> taskInfo = sendTaskModel.getTaskInfo();
+        List<TaskInfo> taskInfo = sendTaskModel.getTaskInfo();
         try {
             String message = JSON.toJSONString(sendTaskModel.getTaskInfo(), new SerializerFeature[]{SerializerFeature.WriteClassName});
             sendMqService.send(sendMessageTopic, message, tagId);

@@ -6,13 +6,12 @@ import com.logan.ndp.service.api.SendService;
 import com.logan.ndp.service.api.domain.BatchSendRequest;
 import com.logan.ndp.service.api.domain.SendRequest;
 import com.logan.ndp.service.api.domain.SendResponse;
-import com.logan.ndp.service.common.domain.SimpleTaskInfo;
-import com.logan.ndp.service.common.pipeline.ProcessContext;
-import com.logan.ndp.service.common.pipeline.ProcessController;
+import com.logan.ndp.common.task.domain.SimpleTaskInfo;
+import com.logan.ndp.common.task.pipeline.ProcessContext;
+import com.logan.ndp.common.task.pipeline.ProcessController;
 import com.logan.ndp.service.impl.domain.SendTaskModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -22,7 +21,7 @@ import java.util.List;
 
 @Service
 public class SendServiceImpl implements SendService {
-    // @Qualifier("apiProcessController")
+    @Qualifier("apiProcessController")
     @Autowired
     private ProcessController processController;
 
@@ -69,4 +68,6 @@ public class SendServiceImpl implements SendService {
 
         return new SendResponse(process.getResponse().getStatus(), process.getResponse().getMsg(), (List<SimpleTaskInfo>) process.getResponse().getData());
     }
+
+
 }

@@ -44,7 +44,7 @@ public class ChannelAccountServiceImpl implements ChannelAccountService {
     @Override
     public void deleteByIds(List<Long> ids) {
         for(Long id:ids){
-            channelAccountDao.delete(id);
+            channelAccountDao.deleteById(id);
         }
     }
 }

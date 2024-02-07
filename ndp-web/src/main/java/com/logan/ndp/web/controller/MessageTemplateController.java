@@ -10,14 +10,13 @@ import com.logan.ndp.service.api.SendService;
 import com.logan.ndp.service.api.domain.SendRequest;
 import com.logan.ndp.service.api.domain.SendResponse;
 import com.logan.ndp.service.api.enums.BusinessCode;
-import com.logan.ndp.service.common.domain.MessageParam;
+import com.logan.ndp.common.task.domain.MessageParam;
 import com.logan.ndp.web.exception.CommonException;
 import com.logan.ndp.web.service.MessageTemplateService;
 import com.logan.ndp.web.util.Convert4Amis;
 import com.logan.ndp.web.vo.MessageTemplateParams;
 import com.logan.ndp.web.vo.MessageTemplateVo;
 import com.logan.ndp.web.vo.amis.CommonAmisVo;
-import com.sun.corba.se.spi.servicecontext.SendingContextServiceContext;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,6 +82,7 @@ public class MessageTemplateController {
         messageTemplateService.copy(id);
     }
 
+    @DeleteMapping("delete/{id}")
     public void deleteById(@PathVariable("id") String id){
         if(CharSequenceUtil.isNotBlank(id)){
             List<Long> idList = Arrays.stream(id.split(StrPool.COMMA)).map(Long::valueOf).collect(Collectors.toList());
