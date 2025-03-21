@@ -16,7 +16,7 @@ A scalable and modular backend platform for managing and distributing notificati
 - RabbitMQ
 - Redis
 - Mybatis
-Build Tool: Maven
+- Build Tool: Maven
 
 # Project Structure
 - ndp-common: Contains common utilities and shared resources.​
